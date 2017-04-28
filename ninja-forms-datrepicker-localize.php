@@ -33,13 +33,13 @@ class NF_Datepicker_Webreact {
         function nf_datepicker_options() {
 
             $settings = array(
-                'foo' => 'bar',
-                'setting' => 123
+                'weekdays' => 'foor',
+                'vacactiondays' => 'bar'
             );
 
             wp_register_script('nf_datepicker_options', plugin_dir_url( __FILE__ ) . 'js/locale_date.js', array( 'jquery' ), false, true );
             wp_localize_script('nf_datepicker_options', 'settings', $settings);
-            wp_enqueue_script('nf_datepicker_options'); //load the JavaScript file
+            wp_enqueue_script('nf_datepicker_options');
 
         }
 
