@@ -1,11 +1,16 @@
 jQuery( document ).ready( function() {
+
     new(Marionette.Object.extend( {
+
+
 
         initialize: function() {
             this.listenTo( Backbone.Radio.channel( 'pikaday' ), 'init', this.modifyDatepicker );
         },
 
-        //Change the strings below to translate the string in our datepicker. 
+
+
+    //Change the strings below to translate the string in our datepicker.
         modifyDatepicker: function( dateObject, fieldModel ) {
             dateObject.pikaday._o.i18n = {
                 previousMonth : 'Vorige Maand',
@@ -30,7 +35,7 @@ jQuery( document ).ready( function() {
          */
         dateObject.pikaday._o.disableDayFn = function( date ) {
             var disabledDays = ["2017-04-27", "2017-04-28" ];
-
+            console.log(settings.foo);
 
             if ( _.indexOf( disabledDays, moment( date ).format( "YYYY-MM-DD" ) ) !== -1  || date.getDay() === 0) {
                 return true;
