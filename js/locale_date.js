@@ -17,11 +17,20 @@ jQuery( document ).ready( function() {
             };
 
         /*
-         * The disableDayFn pikaday setting lets us disable specifc days so that the user can't select them.
-         *
+         * No date selection in the past.
+         */
+        dateObject.pikaday._o.minDate = moment().subtract(1, 'day');
+
+        /*
+         * Set the first weekday.
+         */
+        dateObject.pikaday._o.firstDay = 1;
+
+        /*
+         * Disbale specific dates.
          */
         dateObject.pikaday._o.disableDayFn = function( date ) {
-            var disabledDays = ["2017-04-27", "2017-04-28" ];
+            var disabledDays = ["2017-05-10", "2017-05-11" ];
             console.log(settings.foo);
 
             if ( _.indexOf( disabledDays, moment( date ).format( "YYYY-MM-DD" ) ) !== -1  || date.getDay() === 0) {
@@ -40,9 +49,6 @@ jQuery( document ).ready( function() {
         //     }
         // }
 
-        /*
-         * Note that if you have both snippets above in your code, the second will always override the first.
-         */
 
         // dateObject.pikaday.setDate( '01/01/2018' );
         // dateObject.pikaday.gotoYear( '2017' );
