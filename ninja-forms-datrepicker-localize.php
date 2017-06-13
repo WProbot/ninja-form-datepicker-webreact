@@ -31,19 +31,15 @@ class NF_Datepicker_Webreact {
         add_filter( 'ninja_forms_enqueue_scripts', 'nf_datepicker_options' );
 
         function nf_datepicker_options() {
-
             $settings = array(
-                'weekdays' => 'foor',
-                'vacactiondays' => 'bar'
+                'weekdays'          => 'foo',
+                'vacactiondays'     => 'bar'
             );
 
             wp_register_script('nf_datepicker_options', plugin_dir_url( __FILE__ ) . 'js/locale_date.js', array( 'jquery' ), false, true );
             wp_localize_script('nf_datepicker_options', 'settings', $settings);
             wp_enqueue_script('nf_datepicker_options');
-
         }
-
-
     }
 }
 
