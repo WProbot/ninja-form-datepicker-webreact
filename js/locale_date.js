@@ -30,7 +30,9 @@ jQuery( document ).ready( function() {
             fieldModel.get ('key') == 'date_25' ||
             fieldModel.get ('key') == 'tot_en_met_1486978889913' ||
             fieldModel.get ('key') == 'date_181' ||
-            fieldModel.get ('key') == 'date_182' ) {
+            fieldModel.get ('key') == 'date_182' ||
+            fieldModel.get ('key') == 'brengdatum' ||
+            fieldModel.get ('key') == 'ophaaldatum') {
 
                 /*
                  * No date selection in the past.
